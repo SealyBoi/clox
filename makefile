@@ -1,13 +1,15 @@
 CC = gcc
 CFLAGS = -g
 RM = rm
-files = $(main) $(chunk) $(debug) $(memory) $(value) $(vm)
+files = $(main) $(chunk) $(debug) $(memory) $(value) $(vm) $(scanner) $(compiler)
 main = src/main.c
 chunk = src/chunk.c
 debug = src/debug.c
 memory = src/memory.c
 value = src/value.c
 vm = src/vm.c
+scanner = src/scanner.c
+compiler = src/compiler.c
 
 default: all
 

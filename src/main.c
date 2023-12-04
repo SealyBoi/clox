@@ -28,7 +28,7 @@ static char* readFile(const char* path) {
         exit(74);
     }
 
-    fsesek(file, 0L, SEEK_END);
+    fseek(file, 0L, SEEK_END);
     size_t fileSize = ftell(file);
     rewind(file);
 

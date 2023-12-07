@@ -1,0 +1,5 @@
+fun pow(a, b) {
+    return power(a, b);
+}
+
+print pow(4, 4);

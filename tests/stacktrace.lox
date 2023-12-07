@@ -1,0 +1,8 @@
+// This function should return a stack trace.
+fun a() { b(); }
+fun b() { c(); }
+fun c() {
+    c("too", "many", "args");
+}
+
+a();

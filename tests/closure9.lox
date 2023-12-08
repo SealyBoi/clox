@@ -1,0 +1,28 @@
+fun vector(v1, v2) {
+    var x;
+    var y;
+
+    fun constructVector(v1, v2) {
+        x = v1;
+        y = v2;
+    }
+
+    fun getX() {
+        return x;
+    }
+
+    fun getY() {
+        return y;
+    }
+
+    fun addXY() {
+        return x + y;
+    }
+
+    constructVector(v1, v2);
+    print getX();
+    print getY();
+    print addXY();
+}
+
+vector(1, 2);

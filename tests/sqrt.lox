@@ -1,0 +1,5 @@
+fun getRoot(a) {
+    return sqrt(a);
+}
+
+print getRoot(144);

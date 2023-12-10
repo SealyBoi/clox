@@ -3,6 +3,7 @@
 #include <string.h>
 #include <time.h>
 #include <math.h>
+#include <ctype.h>
 
 #include "common.h"
 #include "compiler.h"
@@ -42,6 +43,22 @@ static Value sqrtNative(int argCount, Value* args) {
     double num = AS_NUMBER(args[0]);
     result = sqrt(num);
     return NUMBER_VAL(result);
+}
+
+static Value inputNative(int argCount, Value* args) {
+    char input[50];
+    fgets(input, sizeof(input), stdin);
+    input[strcspn(input, "\n")] = 0;
+
+    for (int i = 0; i < strlen(input); i++) {
+        if (!isdigit(input[i])) {
+            return OBJ_VAL(copyString(input, strlen(input)));
+        }
+    }
+
+    int num;
+    sscanf(input, "%d", &num);
+    return NUMBER_VAL(num);
 }
 
 static void resetStack()
@@ -97,6 +114,7 @@ void initVM()
     defineNative("clock", clockNative);
     defineNative("power", powerNative);
     defineNative("sqrt", sqrtNative);
+    defineNative("input", inputNative);
 }
 
 void freeVM()

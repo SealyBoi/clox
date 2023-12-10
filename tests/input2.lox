@@ -1,0 +1,5 @@
+print "Num 1: ";
+var x = input();
+print "Num 2: ";
+var y = input();
+print x + y;
